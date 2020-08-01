@@ -7,7 +7,7 @@ import "./BridgeMainnet.sol";
 
 contract BridgeSideChain {
     VoterSideChain public voteContract;
-    BridgeMainnet public bridgeContract;
+    BridgeMainnet public bridgeMainnet;
 
     function pushBalance(address user, uint256 amount) public {
         voteContract.setVoteBalance(user, amount);
@@ -18,6 +18,6 @@ contract BridgeSideChain {
     }
 
     function _magicAcross(uint256 id) internal {
-        bridgeContract.setWinner(id);
+        bridgeMainnet.setWinner(id);
     }
 }
